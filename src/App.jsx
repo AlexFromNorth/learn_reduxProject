@@ -1,5 +1,5 @@
 
-import './App.css'
+import './index.css'
 import RecipeItem from './recipe-item/RecipeItem'
 
 function App() {
