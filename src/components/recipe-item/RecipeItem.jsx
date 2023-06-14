@@ -3,9 +3,11 @@ import styles from "./RecipeItem.module.css";
 import { useSelector } from "react-redux";
 import { actions } from "../../store/favorites/favorites.slice";
 import { useActions } from "../../hook/useActions";
+import { useFavorites } from "../../hook/useFavorites";
 
 const RecipeItem = ({ recipe }) => {
-  const { favorites } = useSelector((state) => state);
+  const { favorites } = useFavorites();
+  console.log(favorites)
 
   const { toggleFavorites } = useActions();
   const isExists = favorites.some((r) => r.id === recipe.id);
