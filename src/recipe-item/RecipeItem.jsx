@@ -7,8 +7,14 @@ const RecipeItem = ({ recipe }) => {
   const { favorites } = useSelector((state) => state);
 
   const dispatch = useDispatch();
+  const isExists = favorites.some((r) => r.id === recipe.id);
 
   console.log(favorites);
+
+  let isExistsText = "";
+
+  if (isExists) isExistsText = "Remove from favorites";
+  else isExistsText = "Add to favorites";
 
   return (
     <div className={styles.item}>
@@ -19,7 +25,7 @@ const RecipeItem = ({ recipe }) => {
           dispatch(actions.toggleFavorites(recipe));
         }}
       >
-        Add to favorites
+        {isExistsText}
       </button>
     </div>
   );
