@@ -11,7 +11,12 @@ export const api = createApi({
   }),
   endpoints: (builder) => ({
     getRecipes: builder.query({
-      query: () => "/",
+      //добавление сортировки по id в обратную сторону
+      query: () => "/?_sort=id&_order=desc",
+      // query: () => "/",
+      providesTags: () =>[{
+        type: 'Recipe'
+      }]
     }),
   }),
 });
