@@ -7,17 +7,15 @@ import { useFavorites } from "../../hook/useFavorites";
 
 const RecipeItem = ({ recipe }) => {
   const { favorites } = useFavorites();
-  // console.log(favorites)
 
   const { toggleFavorites } = useActions();
   const isExists = favorites.some((r) => r.id === recipe.id);
-
 
   let isExistsText = "";
 
   if (isExists) isExistsText = "Remove from favorites";
   else isExistsText = "Add to favorites";
-console.log(recipe)
+// console.log(recipe)
   return (
     <div className={styles.item}>
       <img src={recipe.image} alt={recipe.name} />

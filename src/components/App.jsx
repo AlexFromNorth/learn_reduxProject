@@ -3,15 +3,17 @@ import "../index.css";
 import RecipeItem from "./recipe-item/RecipeItem";
 import User from "./user/User";
 import { useGetRecipesQuery } from "../store/api/api";
+import CreateRecipe from "./create-recipe/CreateRecipe";
 
 function App() {
   const { isLoading, data } = useGetRecipesQuery();
-  console.log(data);
+  // console.log(data);
 
   return (
     <section>
       <Header />
       {/* <User /> */}
+      <CreateRecipe/>
       <div>
         {isLoading ? (
           <div>Loading...</div>
